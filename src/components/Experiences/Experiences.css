@@ -1,0 +1,90 @@
+.experiences {
+  padding: 60px 0;
+  background: #f8fafc;
+  font-family: "Inter", sans-serif;
+  color: #1e293b;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #0f172a;
+}
+
+/* Modern grid layout */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem; /* tighter space between cards */
+  justify-content: center;
+  align-items: stretch;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Each experience card */
+.timeline-item {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Hover animation */
+.timeline-item:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  background: #f9fafb;
+}
+
+/* Card content styling */
+.timeline-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #111827;
+}
+
+.exp-company {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #2563eb;
+  margin-bottom: 0.4rem;
+}
+
+.exp-year {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.6rem;
+}
+
+.exp-desc {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #334155;
+  flex-grow: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .timeline {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .timeline-item {
+    padding: 1rem 1.2rem;
+  }
+}
+
+/* Smooth animation for framer-motion entry */
+.timeline-item {
+  will-change: transform, opacity;
+}
