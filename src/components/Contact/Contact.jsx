@@ -1,28 +1,38 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser"; // ✅ Import EmailJS
+import emailjs from "@emailjs/browser";
 import "./Contact.css";
 
 function Contact() {
   const form = useRef();
-  const [status, setStatus] = useState(""); // for success message
+  const [status, setStatus] = useState("");
 
   const sendEmail = (e) => {
     e.preventDefault();
 
+    // Build booking data safely (optional)
+    const formData = new FormData(form.current);
+    const bookingData = {
+      userName: formData.get("from_name"),
+      userEmail: formData.get("from_email"),
+      message: formData.get("message"),
+      bookedAt: new Date().toLocaleString(),
+    };
+    console.log("Booking Data:", bookingData);
+
     emailjs
       .sendForm(
-        "service_872cqtr", // ✅ your Service ID
-        "template_2jyor37", // ✅ your Template ID
+        "service_872cqtr",
+        "template_2jyor37",
         form.current,
-        "hWpbI_oH9gVDwrR-0" // ⬅️ Public Key (from dashboard)
+        "hWpbI_oH9gVDwrR-0"
       )
       .then(
         (result) => {
           console.log("Email sent:", result.text);
           setStatus("✅ Message submitted successfully!");
           e.target.reset();
-          setTimeout(() => setStatus(""), 4000); // hide after 4s
+          setTimeout(() => setStatus(""), 4000);
         },
         (error) => {
           console.error("Email send error:", error.text);
@@ -53,7 +63,6 @@ function Contact() {
         Let’s build something amazing together!
       </motion.p>
 
-      {/* ✅ Connected EmailJS Form */}
       <motion.form
         ref={form}
         onSubmit={sendEmail}

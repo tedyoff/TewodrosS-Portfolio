@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import "./Footer.css";
 
+
 function Footer() {
   const [showFAQ, setShowFAQ] = useState(false);
 
@@ -53,6 +54,7 @@ function Footer() {
           <FaMapMarkerAlt className="icon" />
           <span>Virginia, USA</span>
           <div className="map-container">
+            <footer class="bg-dark text-white text-center py-4 fixed-bottom"></footer>
             <iframe
               title="map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3186848.273297284!2d-80.229!3d37.4316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b476d73d8c6b27%3A0x2d84b16a5e7ac25!2sVirginia%2C%20USA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
