@@ -8,7 +8,7 @@ function Projects() {
       name: "E-commerce App",
       desc: "Full-stack React + Node.js + MySQL e-commerce application with product management, cart system, checkout, and payment gateway integration.",
       tech: ["React", "Node.js", "MySQL", "Stripe"],
-      link: "https://ecommerce-crud-api-integration-fullstack-qirs-bc8s5t5a6.vercel.app/",
+      link: "https://amazon-clone-pi-amber.vercel.app/",
       github: "https://github.com/tedyoff/ecommerce_CRUD_Api_integration_fullstack",
       image: "https://www.thedigitalenterprise.com/wp-content/uploads/2019/03/Building-Mobile-E-Commerce-App-%E2%80%93-A-Complete-Handbook.jpg",
     },
@@ -18,7 +18,7 @@ function Projects() {
       tech: ["React", "Express", "Socket.io", "EmailJS"],
       link: "https://chat-application-nb7e.vercel.app/",
       github: "https://github.com/tedyoff/Chat-Application",
-      image: "public/images/chatapp.jpg",
+      image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     },
     {
       name: "Student Attendance Tracker",
@@ -26,15 +26,15 @@ function Projects() {
       tech: ["React", "Node.js", "JWT"],
       link: "https://student-attendance-tracker-mocha-three.vercel.app/",
       github: "https://github.com/tedyoff/student-attendance-tracker",
-      image: "public/images/attendance.jpg",
+      image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     },
     {
       name: "Portfolio Website",
       desc: "Personal portfolio built with React, Framer Motion, and modern UI design.",
       tech: ["React", "Framer Motion", "CSS3"],
-      link: "https://react-portfolio-five-delta.vercel.app/",
-      github: "https://github.com/tedyoff/React-Portfolio-",
-      image: "public/images/portfolio1.jpg",
+      link: "https://tewodros-s-portfolio.vercel.app/",
+      github: "https://github.com/tedyoff/TewodrosS-Portfolio",
+      image: "https://st2.depositphotos.com/1092019/9744/i/950/depositphotos_97442560-stock-photo-portfolio-on-laptop-in-modern.jpg",
     },
     {
       name: "Amazon Frontend Clone",
@@ -42,7 +42,7 @@ function Projects() {
       tech: ["React", "Tailwind CSS", "React Router", "Context API", "React Icons"],
       link: "https://amazon-clone-pi-amber.vercel.app/",
       github: "https://github.com/tedyoff/amazon-clone",
-      image: "public/images/Amazon.jpg",
+      image: "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
     },
     {
       name: "EventHub – Event Discovery & Booking Platform",
@@ -50,7 +50,7 @@ function Projects() {
       tech: ["HTML5", "CSS", "Bootstrap", "JavaScript", "EmailJS"],
       link: "https://eventhub-final-project.vercel.app/",
       github: "https://github.com/tedyoff/Eventhub-final-project",
-      image: "public/images/storefront.jpg",
+      image: "https://images.pexels.com/photos/3184666/pexels-photo-3184666.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     },
   ];
 
