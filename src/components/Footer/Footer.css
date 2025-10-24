@@ -1,95 +1,80 @@
-/* Ensure page uses full height */
-html, body, #root {
-  height: 100%;
-  margin: 0;
+.footer {
+  width: 100%;
+  background-color: #111;
+  color: #fff;
+  padding: 1rem 1.5rem;
   display: flex;
   flex-direction: column;
-}
-
-/* Footer sticks to bottom */
-.footer {
-  background-color: #e6e9eb;
-  color: #908989;
-  font-size: 0.85rem;
-  flex-shrink: 0; /* Prevent shrinking */
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0.5rem 1rem;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  position: relative;
+  bottom: 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 0.8rem;
 }
 
-.contact span {
-  margin-right: 1rem;
+.footer-contact a {
+  display: block;
+  color: #00b4d8;
+  text-decoration: none;
+  margin: 0.2rem 0;
+  transition: color 0.3s;
 }
 
-.contact a {
-  color: #387575;
-  text-decoration: center;
-}
-
-.contact a:hover {
+.footer-contact a:hover {
   color: #90e0ef;
 }
 
-.socials {
-  display: flex;          /* enables flex layout */
-  justify-content: center; /* centers items horizontally */
-  align-items: center;     /* centers items vertically if needed */
-  gap: 20px;               /* optional spacing between icons */
-  height: 100%;            /* optional, if you want full container height */
+.footer-socials a {
+  color: #00b4d8;
+  font-size: 1.4rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
 }
 
-.socials a {
-  color: #060a0a;
-  transition: 0.3s;
-  font-size: 1.5rem;      /* optional, makes icons bigger */
-}
-
-.socials a:hover {
-  color: #90e0ef;         /* optional hover effect */
+.footer-socials a:hover {
+  color: #90e0ef;
 }
 
 .back-to-top {
-  background: none;
+  background: #00b4d8;
   border: none;
-  color: #00b4d8;
+  padding: 0.4rem 0.8rem;
+  color: #fff;
   cursor: pointer;
+  border-radius: 5px;
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  transition: background 0.3s;
 }
 
 .back-to-top:hover {
-  color: #90e0ef;
+  background: #90e0ef;
 }
 
 .footer-bottom {
-  width: 100%;
+  font-size: 0.85rem;
   text-align: center;
-  padding: 0.25rem 0;
-  background-color:#f6eeee;
+  color: #aaa;
 }
 
-/* Responsive */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .footer-container {
+  .footer-content {
     flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 
-  .contact span {
-    display: block;
-    margin: 0.25rem 0;
-  }
-
-  .socials a {
-    margin: 0 0.25rem;
+  .footer-socials {
+    margin: 0.3rem 0;
   }
 }

@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #ffffff;
+  background-color: #222020;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   z-index: 999;
 }
@@ -43,7 +43,7 @@
 
 .nav-item a {
   text-decoration: none;
-  color: #222;
+  color: #ffffff;
   font-weight: 500;
   transition: color 0.3s ease;
 }
