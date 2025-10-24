@@ -1,27 +1,40 @@
-/* ========== Header Base ========== */
+/* Header */
 .header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  z-index: 999;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: #1f2937;
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 0.75rem 1.5rem;
 }
 
+/* Logo */
 .logo {
   font-weight: 700;
-  font-size: 1.3rem;
-  color: #2563eb;
+  font-size: 1.6rem;
+  color: #0077b6;
+  letter-spacing: 1px;
 }
 
 /* Desktop Nav */
+.nav {
+  display: flex;
+}
+
 .nav-list {
   display: flex;
-  gap: 1.5rem;
   list-style: none;
+  gap: 1.5rem;
 }
 
 .nav-item {
@@ -29,27 +42,27 @@
 }
 
 .nav-item a {
-  color: white;
   text-decoration: none;
+  color: #222;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .nav-item a:hover {
-  color: #2563eb;
+  color: #0077b6;
 }
 
-/* Dropdown (Desktop Hover) */
+/* Dropdown */
 .dropdown {
   position: absolute;
-  top: 100%;
+  top: 110%;
   left: 0;
-  background: #374151;
-  border-radius: 6px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
   padding: 0.5rem 0;
-  list-style: none;
-  min-width: 180px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  min-width: 200px;
+  z-index: 10;
 }
 
 .dropdown li {
@@ -57,95 +70,76 @@
 }
 
 .dropdown li a {
-  color: #f3f4f6;
-  display: block;
+  color: #0077b6;
 }
 
 .dropdown li a:hover {
-  background: #2563eb;
-  color: white;
-  border-radius: 4px;
+  background-color: #f0f8ff;
+  border-radius: 6px;
 }
 
-/* ========== Mobile Nav ========== */
+/* Hamburger */
 .hamburger {
   display: none;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   cursor: pointer;
+  color: #0077b6;
 }
 
-/* Mobile Menu Hidden by Default */
+/* Mobile Menu */
 .mobile-menu {
   display: none;
-}
-
-/* When Open */
-.mobile-menu.open {
-  display: block;
-  background: #111827;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 100%;
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%;
-  padding: 1rem;
-  animation: slideDown 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border-top: 1px solid #eaeaea;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-menu.open {
+  display: flex;
+  max-height: 1000px; /* enough height */
 }
 
 .mobile-menu ul {
   list-style: none;
-  padding: 0;
+  padding: 1rem;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+}
+
+.mobile-menu li {
+  margin-bottom: 0.8rem;
 }
 
 .mobile-menu a,
 .mobile-menu button {
+  color: #0077b6;
+  font-weight: 500;
+  text-decoration: none;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  width: 100%;
   background: none;
   border: none;
-  color: white;
-  font-size: 1rem;
-  font-weight: 500;
-  text-align: left;
   cursor: pointer;
-  padding: 0.6rem 0.8rem;
-  border-radius: 4px;
-  width: 100%;
-  transition: background 0.3s;
+  font-size: 1rem;
+  padding: 0.5rem 0;
 }
 
-.mobile-menu a:hover,
-.mobile-menu button:hover {
-  background: #2563eb;
+.mobile-menu button:hover,
+.mobile-menu a:hover {
+  color: #00b4d8;
 }
 
-/* Dropdown in Mobile */
-.mobile-menu ul ul {
-  margin-left: 1rem;
-  margin-top: 0.3rem;
-  border-left: 2px solid #2563eb;
-  padding-left: 0.8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.mobile-menu ul ul li a {
-  font-size: 0.9rem;
-  color: #d1d5db;
-}
-
-.mobile-menu ul ul li a:hover {
-  color: white;
-}
-
-/* ========== Responsive Rules ========== */
-@media (max-width: 768px) {
-  .nav-list {
+/* Responsive */
+@media (max-width: 1024px) {
+  .nav {
     display: none;
   }
 
@@ -154,14 +148,14 @@
   }
 }
 
-/* Animation */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0.5rem 1rem;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.4rem;
   }
 }

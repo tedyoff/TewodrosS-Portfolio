@@ -9,12 +9,10 @@ function Contact() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    // Build booking data safely (optional)
     const formData = new FormData(form.current);
     const bookingData = {
-      userName: formData.get("from_name"),
-      userEmail: formData.get("from_email"),
+      userName: formData.get("user_name"),
+      userEmail: formData.get("user_email"),
       message: formData.get("message"),
       bookedAt: new Date().toLocaleString(),
     };
@@ -63,30 +61,29 @@ function Contact() {
         Let’s build something amazing together!
       </motion.p>
 
-      <motion.form
-        ref={form}
-        onSubmit={sendEmail}
-        className="contact-form"
+      <motion.div
+        className="contact-container"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <input type="text" name="user_name" placeholder="Your Name" required />
-        <input type="email" name="user_email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-
-        <motion.button
-          type="submit"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Send Message
-        </motion.button>
-      </motion.form>
-
-      {/* ✅ Success/Failure message */}
-      {status && <p className="status-message">{status}</p>}
+        <form ref={form} onSubmit={sendEmail} className="contact-form">
+          <div className="input-group">
+            <input type="text" name="user_name" placeholder="Your Name" required />
+            <input type="email" name="user_email" placeholder="Your Email" required />
+          </div>
+          <textarea name="message" placeholder="Your Message" rows="6" required />
+          <motion.button
+            type="submit"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Send Message
+          </motion.button>
+          {status && <p className="status-message">{status}</p>}
+        </form>
+      </motion.div>
     </section>
   );
 }

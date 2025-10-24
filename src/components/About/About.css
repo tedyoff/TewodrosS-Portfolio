@@ -1,107 +1,132 @@
-/* ========================= */
-/* 🌟 ABOUT SECTION          */
-/* ========================= */
 .about {
+  background-color: #ffffff;
+  color: #222;
   padding: 5rem 2rem;
-  background: linear-gradient(to bottom right, #ffffff, #f9fafb);
+  text-align: center;
 }
 
+/* ✨ Gradient Animated Title */
+.about-title-section {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  letter-spacing: 1px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #0077b6, #00b4d8, #90e0ef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation: gradientShift 6s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
+/* Container layout */
 .about-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: flex-start;
   gap: 3rem;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   flex-wrap: wrap;
 }
 
-/* Left Side (Text) */
+/* Text Card */
 .about-text {
-  flex: 1;
-  min-width: 280px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  border: 1px solid #eaeaea;
+  flex: 1 1 450px;
+  text-align: left;
 }
 
-.section-title {
-  font-size: clamp(2rem, 5vw, 2.5rem);
-  font-weight: 700;
+.about-intro {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
   margin-bottom: 1.5rem;
-  color: #111827;
 }
 
-.about-text p {
-  font-size: 1.1rem;
-  color: #4b5563;
-  line-height: 1.7;
-  margin-bottom: 1rem;
+.about-qualities {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
 }
 
-.highlight {
-  color: #2563eb;
+.about-qualities li {
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+.about-closing {
+  font-size: 1rem;
   font-weight: 600;
+  color: #0077b6;
 }
 
-/* Right Side (Image) */
+/* Image Card */
 .about-image {
-  flex: 1;
-  min-width: 250px;
+  flex: 1 1 350px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .about-photo {
-  width: 300px;
-  max-width: 100%;
-  border-radius: 1.25rem;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
   object-fit: cover;
-}
-/* about.css */
-
-/* Base style for About Me title */
-.about-title {
-  font-size: 2.5rem;      /* adjust size as needed */
-  font-weight: bold;
-  color: #1f2937;         /* default color (dark gray) */
-  transition: color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Hover effect for About Me title */
-.about-title:hover {
-  color: #6366f1;         /* change to indigo on hover */
-  transform: scale(1.05); /* slightly enlarge the title */
+.about-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(0,119,182,0.25);
 }
 
-/* ========================= */
-/* 📱 Responsive Styles      */
-/* ========================= */
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+  .about-container {
+    gap: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .about-container {
-    flex-direction: column-reverse; /* stack with image below text */
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .about-text {
     text-align: center;
-  }
-
-  .about-text p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .about-photo {
-    width: 220px;
   }
 }
 
 @media (max-width: 480px) {
-  .section-title {
-    font-size: 1.75rem;
+  .about {
+    padding: 3rem 1rem;
   }
 
-  .about-text p {
-    font-size: 1rem;
+  .about-title-section {
+    font-size: 2.1rem;
   }
 
-  .about-photo {
-    width: 180px;
+  .about-intro,
+  .about-closing,
+  .about-qualities li {
+    font-size: 0.9rem;
   }
 }

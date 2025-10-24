@@ -1,11 +1,241 @@
-/* Global styling */
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
+/* ====================== GENERAL RESPONSIVE ====================== */
+section {
+  padding: 60px 30px;
 }
 
-.App {
+.container {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
+}
+
+/* ====================== HEADER RESPONSIVE ====================== */
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .mobile-menu.open {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #111;
+    z-index: 100;
+  }
+
+  .mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .mobile-menu li button {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+/* ====================== HERO RESPONSIVE ====================== */
+@media (max-width: 1024px) {
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-photo {
+    width: 250px;
+    margin-top: 20px;
+  }
+
+  .hero-text p,
+  .hero-text h1 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-photo {
+    width: 180px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ====================== ABOUT RESPONSIVE ====================== */
+@media (max-width: 1024px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-photo {
+    width: 200px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-photo {
+    width: 150px;
+  }
+
+  .about-text p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ====================== EDUCATION & EXPERIENCES RESPONSIVE ====================== */
+@media (max-width: 1024px) {
+  .education-grid,
+  .timeline {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .education-card,
+  .timeline-item {
+    flex: 1 1 100%;
+  }
+}
+
+/* ====================== SKILLS RESPONSIVE ====================== */
+@media (max-width: 1024px) {
+  .skills-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .skill-card {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .skill-icons {
+    justify-content: center;
+  }
+}
+
+/* ====================== TESTIMONIALS RESPONSIVE ====================== */
+@media (max-width: 1024px) {
+  .testimonial-cards {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .testimonial-card {
+    flex: 1 1 100%;
+    max-width: 350px;
+    text-align: center;
+  }
+}
+
+/* ====================== PROJECTS RESPONSIVE ====================== */
+@media (max-width: 1024px) {
+  .project-grid {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .project-card {
+    flex: 1 1 100%;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ====================== CONTACT RESPONSIVE ====================== */
+@media (max-width: 1024px) {
+  .contact-form {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .contact-form button {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+}
+
+/* ====================== FOOTER RESPONSIVE ====================== */
+@media (max-width: 1024px) {
+  .footer {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  .socials {
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .back-to-top {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .socials a {
+    font-size: 1.2rem;
+  }
+
+  .back-to-top {
+    font-size: 0.75rem;
+  }
 }

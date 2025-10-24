@@ -26,7 +26,7 @@ function Skills() {
       title: "Frontend",
       skills: [
         { name: "React", icon: <FaReact color="#61DBFB" /> },
-        { name: "Next.js", icon: <SiNextdotjs color="#000000" /> },
+        { name: "Next.js", icon: <SiNextdotjs color="#000" /> },
         { name: "TailwindCSS", icon: <SiTailwindcss color="#06B6D4" /> },
       ],
     },
@@ -34,7 +34,7 @@ function Skills() {
       title: "Backend",
       skills: [
         { name: "Node.js", icon: <FaNodeJs color="#3C873A" /> },
-        { name: "Express.js", icon: <SiExpress color="#000000" /> },
+        { name: "Express.js", icon: <SiExpress color="#000" /> },
         { name: "GraphQL", icon: <SiGraphql color="#E535AB" /> },
       ],
     },
@@ -67,13 +67,18 @@ function Skills() {
   return (
     <section id="skills" className="skills">
       <motion.h2
-        className="section-title"
+        className="skills-title"
         initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+          repeat: Infinity,
+          repeatType: "reverse",
+          repeatDelay: 3,
+        }}
       >
-        Skills
+        <span className="gradient-text">Skills</span>
       </motion.h2>
 
       <div className="skills-grid">
@@ -81,13 +86,13 @@ function Skills() {
           <motion.div
             key={i}
             className="skill-card"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.2, duration: 0.6 }}
+            transition={{ delay: i * 0.1, duration: 0.6 }}
             viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.04 }}
           >
-            <h3>{cat.title}</h3>
+            <h3 className="skill-title">{cat.title}</h3>
             <div className="skill-icons">
               {cat.skills.map((s, j) => (
                 <div key={j} className="skill-item">
